@@ -1,46 +1,274 @@
-.container {
+/* ── Reset & Base ─────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ── Header & Nav ─────────────────────────────────────────────────────────── */
+header {
+    background-color: #2e7d32;
+    color: white;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+nav ul li a {
+    color: #c8e6c9;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+nav ul li a:hover {
+    background-color: #388e3c;
+    color: white;
+}
+
+/* ── Main Layout ──────────────────────────────────────────────────────────── */
+main {
+    max-width: 960px;
+    margin: 24px auto;
+    padding: 0 16px;
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    margin: 0 auto;
+    gap: 24px;
 }
 
-.header {
-    text-align: center;
-    background-color: #4CAF50;
+/* ── Sections ─────────────────────────────────────────────────────────────── */
+section {
+    background: white;
+    border-radius: 8px;
+    padding: 20px 24px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+    font-size: 1.2rem;
+    color: #2e7d32;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #e8f5e9;
+    padding-bottom: 8px;
+}
+
+/* ── Forms ────────────────────────────────────────────────────────────────── */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+form label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #555;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form select {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    min-width: 160px;
+    background: #fafafa;
+    transition: border-color 0.2s;
+}
+
+form input:focus,
+form select:focus {
+    outline: none;
+    border-color: #4caf50;
+    background: white;
+}
+
+form input[readonly] {
+    background: #f0f0f0;
+    color: #666;
+}
+
+/* ── Buttons ──────────────────────────────────────────────────────────────── */
+button[type="submit"],
+button[type="button"],
+#excel-upload,
+#download-records {
+    padding: 9px 18px;
+    background-color: #4caf50;
     color: white;
-    padding: 15px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    white-space: nowrap;
 }
 
-.table {
+button[type="submit"]:hover,
+button[type="button"]:hover,
+#excel-upload:hover,
+#download-records:hover {
+    background-color: #388e3c;
+}
+
+.btn-delete {
+    padding: 5px 12px;
+    background-color: #e53935;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.82rem;
+    transition: background-color 0.2s;
+}
+
+.btn-delete:hover {
+    background-color: #b71c1c;
+}
+
+/* ── Tables ───────────────────────────────────────────────────────────────── */
+table {
     width: 100%;
     border-collapse: collapse;
+    font-size: 0.9rem;
 }
 
-.table th, .table td {
-    border: 1px solid #ddd;
-    padding: 8px;
+table th,
+table td {
+    border: 1px solid #e0e0e0;
+    padding: 10px 12px;
+    text-align: left;
 }
 
-.table th {
-    background-color: #f2f2f2;
+table thead th {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    font-weight: 700;
 }
 
-.footer {
+table tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+table tbody tr:hover {
+    background-color: #f1f8f1;
+}
+
+/* ── Payroll Result ───────────────────────────────────────────────────────── */
+#payroll-result {
+    margin-top: 16px;
+}
+
+#payroll-result h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #2e7d32;
+}
+
+.result-table {
+    max-width: 400px;
+}
+
+.result-table th {
+    background-color: #f5f5f5;
+    color: #444;
+    width: 50%;
+}
+
+.result-table .total-row th,
+.result-table .total-row td {
+    background-color: #e8f5e9;
+    font-weight: 700;
+    color: #2e7d32;
+    font-size: 1rem;
+}
+
+/* ── Payroll Records buttons ──────────────────────────────────────────────── */
+#payroll-records {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#download-records {
+    align-self: flex-start;
+}
+
+/* ── Work Time upload button ──────────────────────────────────────────────── */
+#excel-upload {
+    background-color: #1976d2;
+}
+
+#excel-upload:hover {
+    background-color: #1565c0;
+}
+
+/* ── Footer ───────────────────────────────────────────────────────────────── */
+footer {
     text-align: center;
-    padding: 15px 0;
-    background-color: #4CAF50;
-    color: white;
+    padding: 16px;
+    background-color: #2e7d32;
+    color: #c8e6c9;
+    font-size: 0.85rem;
+    margin-top: 24px;
 }
 
+/* ── Responsive ───────────────────────────────────────────────────────────── */
 @media (max-width: 600px) {
-    .container {
-        padding: 10px;
+    header {
+        flex-direction: column;
+        align-items: flex-start;
     }
-    .table th, .table td {
-        padding: 5px;
+
+    nav ul {
+        flex-direction: column;
+        gap: 4px;
     }
-    .header, .footer {
-        padding: 10px 0;
+
+    form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    form input[type="text"],
+    form input[type="number"],
+    form select {
+        width: 100%;
+    }
+
+    table th,
+    table td {
+        padding: 6px 8px;
+        font-size: 0.82rem;
     }
 }
