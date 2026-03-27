@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Payroll System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Payroll Management System</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#job-positions">Job Positions</a></li>
+            <li><a href="#employee-management">Employee Management</a></li>
+            <li><a href="#payroll-rules">Payroll Rules</a></li>
+            <li><a href="#work-time-input">Work Time Input</a></li>
+            <li><a href="#payroll-calculation">Payroll Calculation</a></li>
+            <li><a href="#payroll-records">Payroll Records</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="job-positions">
+            <h2>Job Positions Management</h2>
+            <form id="job-form">
+                <label for="job-title">Job Title:</label>
+                <input type="text" id="job-title" name="job-title" required>
+                <label for="job-description">Description:</label>
+                <textarea id="job-description" name="job-description" required></textarea>
+                <button type="submit">Add Job Position</button>
+            </form>
+        </section>
+        <section id="employee-management">
+            <h2>Employee Management</h2>
+            <form id="employee-form">
+                <label for="employee-name">Employee Name:</label>
+                <input type="text" id="employee-name" name="employee-name" required>
+                <label for="employee-job">Job Position:</label>
+                <select id="employee-job" name="employee-job" required>
+                    <!-- Options populated dynamically -->
+                </select>
+                <button type="submit">Add Employee</button>
+            </form>
+        </section>
+        <section id="payroll-rules">
+            <h2>Payroll Rules</h2>
+            <form id="payroll-rules-form">
+                <label for="rule-name">Rule Name:</label>
+                <input type="text" id="rule-name" name="rule-name" required>
+                <label for="rule-condition">Condition:</label>
+                <input type="text" id="rule-condition" name="rule-condition" required>
+                <button type="submit">Add Rule</button>
+            </form>
+        </section>
+        <section id="work-time-input">
+            <h2>Work Time Input</h2>
+            <form id="work-time-form">
+                <label for="employee-id">Employee ID:</label>
+                <input type="text" id="employee-id" name="employee-id" required>
+                <label for="hours-worked">Hours Worked:</label>
+                <input type="number" id="hours-worked" name="hours-worked" required>
+                <button type="submit">Submit Hours</button>
+            </form>
+        </section>
+        <section id="payroll-calculation">
+            <h2>Payroll Calculation</h2>
+            <button id="calculate-payroll">Calculate Payroll</button>
+            <div id="payroll-results"></div>
+        </section>
+        <section id="payroll-records">
+            <h2>Payroll Records</h2>
+            <table id="payroll-table">
+                <thead>
+                    <tr>
+                        <th>Employee Name</th>
+                        <th>Pay Period</th>
+                        <th>Gross Pay</th>
+                        <th>Deductions</th>
+                        <th>Net Pay</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Payroll records populated dynamically -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
