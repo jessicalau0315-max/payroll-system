@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Payroll System</h1>
+        <nav>
+            <ul>
+                <li><a href="#job-positions">Job Positions Management</a></li>
+                <li><a href="#employee-management">Employee Management</a></li>
+                <li><a href="#payroll-rules">Payroll Rules Setup</a></li>
+                <li><a href="#work-time">Work Time Input</a></li>
+                <li><a href="#payroll-calculation">Payroll Calculation</a></li>
+                <li><a href="#payroll-records">Payroll Records</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="job-positions">
+            <h2>Job Positions Management</h2>
+            <form id="job-position-form">
+                <label for="position">Position Name:</label>
+                <input type="text" id="position" name="position" required>
+                <button type="submit">Add Position</button>
+            </form>
+            <table id="position-table">
+                <thead><tr><th>Position Name</th><th>Action</th></tr></thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section id="employee-management">
+            <h2>Employee Management</h2>
+            <form id="employee-form">
+                <label for="emp-name">Employee Name:</label>
+                <input type="text" id="emp-name" name="emp-name" required>
+                <button type="submit">Add Employee</button>
+            </form>
+            <table id="employee-table">
+                <thead><tr><th>Employee Name</th><th>Action</th></tr></thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section id="payroll-rules">
+            <h2>Payroll Rules Setup</h2>
+            <form id="payroll-rules-form">
+                <label for="overtime-rate">Overtime Rate (1.5x):</label>
+                <input type="number" id="overtime-rate" name="overtime-rate" value="1.5" readonly>
+                <label for="attendance-bonus">Attendance Bonus:</label>
+                <input type="number" id="attendance-bonus" name="attendance-bonus" value="500" readonly>
+                <button type="submit">Save Rules</button>
+            </form>
+        </section>
+
+        <section id="work-time">
+            <h2>Work Time Input</h2>
+            <form id="work-time-form">
+                <label for="emp-select">Select Employee:</label>
+                <select id="emp-select" required></select>
+                <label for="hours-worked">Hours Worked:</label>
+                <input type="number" id="hours-worked" name="hours-worked" required>
+                <button type="submit">Submit Work Time</button>
+            </form>
+            <button id="excel-upload">Upload Excel</button>
+        </section>
+
+        <section id="payroll-calculation">
+            <h2>Payroll Calculation</h2>
+            <form id="payroll-calc-form">
+                <label for="calc-emp">Select Employee:</label>
+                <select id="calc-emp" required></select>
+                <button type="submit">Calculate Payroll</button>
+            </form>
+            <div id="payroll-result"></div>
+        </section>
+
+        <section id="payroll-records">
+            <h2>Payroll Records</h2>
+            <table id="payroll-table">
+                <thead><tr><th>Employee</th><th>Salary</th><th>Action</th></tr></thead>
+                <tbody></tbody>
+            </table>
+            <button id="download-records">Download Records</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Payroll System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
